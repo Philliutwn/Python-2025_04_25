@@ -1,5 +1,5 @@
 # This is the first markdown file practice.
-## Two '##' is equivelent to the HTML h2 tag.
+## Two '##' is equivalent to the HTML h2 tag.
 ### Three '###' is equivelent to the HTML h3 tag.
 
 ** Release note **
