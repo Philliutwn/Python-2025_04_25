@@ -1,0 +1,153 @@
+/* 基本重置和通用樣式 */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: beige;
+  color: #333;
+}
+
+header {
+  background-color: #6290bd;
+  /* 根據圖片的背景色調整 */
+  color: #333;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar-brand a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-nav li {
+  margin-left: 1.5rem;
+}
+
+.navbar-nav a {
+  display: block;
+  width:80px;
+  height:40px;
+  line-height: 40px;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-nav a:hover {
+  color: #Fff;
+  background-color: rgb(211, 112, 20);
+  /* 滑鼠懸停時的顏色 */
+}
+
+.navbar-toggler {
+  display: none;
+  /* 預設隱藏 menu 按鈕 */
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: rgb(140, 223, 46);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* 手機版樣式 (RWD) */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+    /* 在手機版顯示 menu 按鈕 */
+  }
+
+  .navbar-collapse {
+    display: none;
+    /* 預設隱藏導覽列項目 */
+    /* width: 100%; */ /* 改為固定寬度並靠右 */
+    width: 180px; /* 設定一個較小的寬度，例如 180px */
+    flex-direction: column;
+    background-color: #f8f9fa;
+    /* 手機版選單背景色 */
+    position: absolute;
+    top: 60px;
+    /* 根據 header 高度調整 */
+    /* left: 0; */ /* 改為靠右對齊 */
+    right: 0; /* 選單靠右 */
+    left: auto; /* 清除左邊定位 */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-collapse.active {
+    display: flex;
+    /* 當 active class 存在時顯示 */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    /* width: 100%; */
+    width: 180px;
+  }
+
+  .navbar-nav li {
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navbar-nav li:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-nav a {
+    display: block;
+    padding: 1rem;
+    text-align: center; /* 確保文字在連結區塊內置中 */
+    background-color: aqua;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    /* 允許品牌和按鈕換行 */
+  }
+
+  .navbar-brand {
+    padding-bottom: 0.5rem;
+    /* 確保品牌和按鈕之間有空間 */
+  }
+}
