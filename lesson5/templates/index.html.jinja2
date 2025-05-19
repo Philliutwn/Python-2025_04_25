@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職能發展學院</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="#">職能發展學院</a>
+            </div>
+            <button class="navbar-toggler" aria-label="Toggle navigation">
+                menu
+            </button>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">課程規劃</a></li>
+                    <li><a href="#">最新訊息</a></li>
+                    <li><a href="#">交通資訊</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>歡迎來到職能發展學院</h1>
+        <p>這是一個符合 RWD 的基本網頁框架。</p>
+    </main>
+
+    {# <footer>
+    #     <p>&copy; 2024 職能發展學院. All rights reserved.</p>
+     </footer>
+    #}
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="{{url_for('static', filename='images/logo.png')}}" alt="Logo">
+        </div>
+        <nav class="footer-nav">
+            <ul>
+
+                <li><a href="#">Discover</a></li>
+                <li><a href="#">Quick Link</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Our Address</a></li>
+                <li><a href="#">Get App</a></li>
+            </ul>
+        </nav>    
+    </div>
+
+  <script src="{{url_for('static', filename='js/index.js')}}"></script>  
+    <div class="footer-copyright">
+        <p>&copy; 2025 職能發展學院. All rights reserved.</p>
+    </div>
+<footer>
+
+</body>
+</html>
