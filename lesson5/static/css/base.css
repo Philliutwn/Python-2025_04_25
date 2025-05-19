@@ -169,7 +169,7 @@ footer {
     display: none;
     /* 預設隱藏導覽列項目 */
     /* width: 100%; */ /* 改為固定寬度並靠右 */
-    width: 180px; /* 設定一個較小的寬度，例如 180px */
+    width: 150px; /* 設定一個較小的寬度，例如 180px */
     flex-direction: column;
     background-color: #f8f9fa;
     /* 手機版選單背景色 */
@@ -191,7 +191,7 @@ footer {
   .navbar-nav {
     flex-direction: column;
     /* width: 100%; */
-    width: 180px;
+    width: 150px;  /* 180->150 px */
   }
 
   .navbar-nav li {
