@@ -79,6 +79,7 @@ header {
 main {
   padding: 2rem;
   max-width: 1200px;
+  height: 600px;;
   margin: 20px auto;
   background-color: rgb(140, 223, 46);
   border-radius: 8px;
