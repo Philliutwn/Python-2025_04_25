@@ -1,4 +1,11 @@
 from flask import Flask,render_template
+import os
+from dotenv import load_dotenv
+import psycopg2
+from psycopg2 import OperationalError
+# 載入.env
+load_dotenv()
+conn_string=os.getenv('RENDER_DATABASE')
 
 app = Flask(__name__)
 
@@ -14,7 +21,26 @@ def classes():
 
 @app.route("/new")
 def new():
-    return render_template("new.html.jinja2")
+    try:
+        conn=psycopg2.connect(conn_string)
+        #raise Exception("出現錯誤")
+        print("Connection established")
+        with conn.cursor() as cur:
+            sql = "SELECT * FROM 最新訊息"
+            cur.execute(sql)
+            rows = cur.fetchall()   # get all data
+    except OperationalError as e:
+        print("Connection failed")
+        print(e)
+        return render_template("error.html.jinja2", error_message = "資料庫錯誤"),500
+    except:
+        return render_template("error.html.jinja2", error_message = "不知名錯誤"),500
+    conn.close()
+    return render_template("new.html.jinja2", rows = rows ),200
+
+    
+
+    
 
 @app.route("/traffic")
 def traffic():
