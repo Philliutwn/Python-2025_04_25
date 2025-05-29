@@ -26,7 +26,8 @@ def new():
         #raise Exception("出現錯誤")
         print("Connection established")
         with conn.cursor() as cur:
-            sql = "SELECT * FROM 最新訊息"
+            sql = """SELECT * FROM public.最新訊息
+                     ORDER BY 上版日期 desc"""
             cur.execute(sql)
             rows = cur.fetchall()   # get all data
     except OperationalError as e:
