@@ -1,0 +1,39 @@
+{% extends "layout/base.html.jinja2" %}
+{% block title %}
+職能發展學院-最新訊息
+{% endblock %}
+
+{% block link%}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/new.css')}}">
+{% endblock %}
+
+
+{% block main %}
+
+<div class="accordion-container">
+  <h1>最新訊息 Accordion</h1>
+      <div class="accordion-item is-open">
+        <button class="accordion-header" aria-expanded="true" aria-controls="accordion-content-static-1" id="accordion-header-static-1">
+          <span class="accordion-title">這是第一個測試標題，這個標題設計得非常長，目的是為了測試在不同螢幕寬度下，多行文字是否能夠正確換行顯示，並且不會影響到右側日期或其他元素的整體排版佈局。</span>
+          <span class="accordion-date">2024-08-01</span>
+          <span class="accordion-icon" aria-hidden="true"></span>
+        </button>
+        <div class="accordion-content" id="accordion-content-static-1" role="region" aria-labelledby="accordion-header-static-1">
+          <p>這是第一筆測試內容。這段內容將會被限制顯示固定的行數，例如三行。如果內容超過三行，多餘的部分將會被隱藏起來，以保持整體排版的一致性與美觀。這是為了確保即使內容長度不一，每個項目在摺疊時的高度也能夠得到控制。這是一段額外添加的文字，以確保內容肯定會超出預設的幾行限制，從而可以測試截斷或滾動條的效果。</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="accordion-content-static-2" id="accordion-header-static-2">
+          <span class="accordion-title">這是第二個測試標題</span>
+          <span class="accordion-date">2024-07-31</span>
+          <span class="accordion-icon" aria-hidden="true"></span>
+        </button>
+        <div class="accordion-content" id="accordion-content-static-2" role="region" aria-labelledby="accordion-header-static-2">
+          <p>這是第二筆測試內容。它比較簡短。</p>
+        </div>
+      </div>
+    </div>
+<script src="{{url_for('static', filename='js/new.js')}}"></script>
+
+{% endblock %}
