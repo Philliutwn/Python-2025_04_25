@@ -1,0 +1,92 @@
+/* cards.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    color: #333333;
+}
+
+.card-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* 響應式列數 */
+    gap: 20px;
+    /* 卡片間距 */
+    max-width: 1200px;
+    margin: 0 auto;
+    /* 容器置中 */
+}
+
+.tech-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tech-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.card-icon-area {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.card-icon {
+    width: 50px;
+    /* 可根據您的圖示大小調整 */
+    height: 50px;
+    /* 可根據您的圖示大小調整 */
+    object-fit: contain;
+}
+
+.card-title {
+    font-size: 1.25em;
+    /* 16px * 1.25 = 20px */
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-description {
+    font-size: 0.9em;
+    /* 16px * 0.9 = 14.4px */
+    color: #555555;
+    line-height: 1.6;
+    flex-grow: 1;
+    /* 使描述填滿剩餘空間，若卡片高度不一時有用 */
+    margin-bottom: 0;
+}
+
+/* 響應式調整 */
+@media (max-width: 600px) {
+    .card-grid-container {
+        grid-template-columns: 1fr;
+        /* 在小螢幕上，每行一個卡片 */
+    }
+
+    .tech-card {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.15em;
+    }
+
+    .card-description {
+        font-size: 0.85em;
+    }
+
+    .card-icon {
+        width: 40px;
+        height: 40px;
+    }
+}

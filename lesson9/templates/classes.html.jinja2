@@ -1,0 +1,32 @@
+{% extends "layout/base.html.jinja2" %}
+{% block title %}
+職能發展學院-課程規劃
+{% endblock %}
+
+{% block main %}
+    <div class="course-tabs">
+        <div class="tab-container" role="tablist">
+            <button class="tab-item active" data-tab="general" role="tab" aria-selected="true">一般課程</button>
+            <button class="tab-item" data-tab="advanced" role="tab" aria-selected="false">進階課程</button>
+        </div>
+        <div class="tab-divider"></div>
+    </div>
+
+    {# ---------card html------- #} 
+     <div class="card-grid-container">
+        <div class="tech-card">
+            <div class="card-icon-area">
+                <img src="card_grid_icon.png" alt="技術圖示" class="card-icon">
+            </div>
+           
+        </div>
+    </div> 
+    
+    <script src="{{url_for('static', filename='js/classes.js')}}"></script>
+
+
+{% endblock %}
+{% block link%}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/classes.css')}}">
+{% endblock %}
