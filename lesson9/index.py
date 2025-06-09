@@ -3,9 +3,10 @@ import os
 from dotenv import load_dotenv
 import psycopg2
 from psycopg2 import OperationalError
-# 載入.env
+
+# 載入 .env 檔案
 load_dotenv()
-conn_string=os.getenv('RENDER_DATABASE')
+conn_string = os.getenv('RENDER_DATABASE')
 
 app = Flask(__name__)
 
@@ -15,33 +16,30 @@ def index():
 
 @app.route("/classes")
 def classes():
-    # name = 'John'
-    # weekdays = ["星期一","星期二","星期三","星期四","星期五","星期六","星期日"]
-    #return render_template("classes.html.jinja2", name = name, weekdays = weekdays)
-    return render_template("classes.html.jinja2")
+    name = "Robert"
+    weekdays = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
+    return render_template("classes.html.jinja2",name=name,weekdays=weekdays)
+
 @app.route("/new")
 def new():
     try:
-        conn=psycopg2.connect(conn_string)
-        #raise Exception("出現錯誤")
-        print("Connection established")
+        conn = psycopg2.connect(conn_string)
         with conn.cursor() as cur:
             sql = """SELECT * FROM public.最新訊息
                      ORDER BY 上版日期 desc"""
             cur.execute(sql)
-            rows = cur.fetchall()   # get all data
+        # 取得所有資料
+            rows = cur.fetchall()
+            
+        
     except OperationalError as e:
-        print("Connection failed")
+        print("連線失敗")
         print(e)
-        return render_template("error.html.jinja2", error_message = "資料庫錯誤"),500
+        return render_template("error.html.jinja2",error_message="資料庫錯誤"),500
     except:
-        return render_template("error.html.jinja2", error_message = "不知名錯誤"),500
+        return render_template("error.html.jinja2",error_message="不知名錯誤"),500
     conn.close()
-    return render_template("new.html.jinja2", rows = rows )
-
-    
-
-    
+    return render_template("new.html.jinja2",rows=rows)
 
 @app.route("/traffic")
 def traffic():
