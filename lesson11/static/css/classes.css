@@ -137,31 +137,17 @@ body {
 
 .pagination {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: #e94f4f;
+    
     
 }
 
 .pagination li {
-    margin-right: 20px;
-    margin-top: 15px;
-    background-color: #58ee7e;
-    box-sizing: border-box;
+    
+    
 }
 
 .pagination li a {
-    width: 30px;
-    height: 30px;
-    display: block;
-    margin: auto;
-    background-color: #dad9d9;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    
 }
 
 
