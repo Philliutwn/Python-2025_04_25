@@ -1,0 +1,109 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    /* Added a light background for better visibility */
+}
+
+.course-tabs {
+    max-width: 1227px;
+    /* Desktop width */
+    margin: 0 auto;
+}
+
+.tab-container {
+    display: flex;
+    background-color: #CCCCCC;
+    /* 淺灰色 */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* 黑色, 20% 透明度 */
+    border-bottom: none;
+    /* Divider will handle bottom border */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    /* Ensures content respects rounded corners */
+}
+
+.tab-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    /* Medium */
+    font-size: 16px;
+    line-height: 1.21;
+    color: #000000;
+    /* 黑色 */
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    /* Adjust padding as needed for spacing */
+    cursor: pointer;
+    text-align: center;
+    flex-grow: 0;
+    /* Desktop: width adapts to content */
+    flex-shrink: 0;
+    margin-right: 10px;
+    /* Spacing between tabs */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    outline: none;
+    /* Remove default browser outline */
+}
+
+.tab-item:last-child {
+    margin-right: 0;
+}
+
+.tab-item:hover {
+    background-color: #e0e0e0;
+    /* Lighter gray for hover */
+}
+
+.tab-item.active {
+    font-weight: bold;
+    /* Example active state, can be more distinct */
+    /* Add more distinct active styles if needed, e.g., different background or underline */
+    color: #007bff;
+    /* Example active color */
+}
+
+/* Focus styles for accessibility */
+.tab-item:focus-visible {
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+    /* Example focus ring */
+}
+
+.tab-divider {
+    height: 1px;
+    background-color: #000000;
+    /* 黑色實線 */
+    width: 100%;
+    /* 與容器相同寬度 */
+}
+
+/* 手機版 (≤767px) */
+@media (max-width: 767px) {
+    .tab-container {
+        padding: 6px;
+        /* 內距調整為 6px */
+    }
+
+    .tab-item {
+        font-size: 14px;
+        /* 字體大小調整為 14px */
+        flex-grow: 1;
+        /* 標籤寬度平均分配容器寬度 */
+        padding: 8px 5px;
+        /* Adjust padding for smaller screens */
+        margin-right: 5px;
+        /* Adjust spacing for smaller screens */
+    }
+
+    .tab-item:last-child {
+        margin-right: 0;
+    }
+
+    .course-tabs {
+        /* On mobile, allow it to take full width if not constrained by a parent */
+    }
+}
